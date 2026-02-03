@@ -58,34 +58,27 @@ function displayCat() {
 
 // Function to display the cat-heart.gif
 function displayCatHeart() {
-    // 1. Clear the container
+    // 1. Change the image to the cat with hearts
     var imageContainer = document.getElementById('image-container');
-    imageContainer.innerHTML = '';
-
-    // 2. Create the GIF
+    imageContainer.innerHTML = ''; 
     var catHeartImage = new Image();
-    catHeartImage.src = 'cat-heart.gif'; 
+    catHeartImage.src = 'cat-heart.gif';
     catHeartImage.alt = 'Cat Heart';
-    catHeartImage.style.display = 'block';
-    catHeartImage.style.margin = '0 auto';
-
-    // 3. Create the Text
-    var message = document.createElement('div');
-    message.id = 'success-message';
-    message.innerHTML = "YAAYYYY I knew you would say yes, <br> You didn't get the big yes button by pressing no right? ... ";
-    
-    // Optional: Inline styling to make sure it's visible
-    message.style.fontSize = '2rem';
-    message.style.marginTop = '20px';
-    message.style.textAlign = 'center';
-    message.style.color = '#ff4d6d';
-
-    // 4. Add them to the page
     imageContainer.appendChild(catHeartImage);
-    imageContainer.appendChild(message);
 
-    // 5. Hide the question and options
+    // 2. Hide the original question
     document.getElementById('question').style.display = 'none';
+
+    // 3. Create and show the new "YAAYYYY" text
+    var textContainer = document.getElementById('text-container');
+    var yayText = document.createElement('div');
+    yayText.id = 'yay-message';
+    yayText.innerText = "YAAYYYY I knew you would say yes, You didn't get the big yes button by pressing no right? ... ";
+    
+    // Add the new text to the container
+    textContainer.appendChild(yayText);
+
+    // 4. Hide the buttons
     document.getElementById('options').style.display = 'none';
     };
 }
