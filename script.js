@@ -22,7 +22,7 @@ function selectOption(option) {
     message.style.marginTop = '20px';
 
     document.body.appendChild(message);
-            displayCatHeart(); // Display the cat-heart.gif
+            //displayCatHeart(); // Display the cat-heart.gif
         });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
