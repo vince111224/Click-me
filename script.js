@@ -72,6 +72,3 @@ function displayCat() {
 }
 
 
-
-// Display the cat.gif initially
-displayCat();
