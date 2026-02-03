@@ -59,18 +59,26 @@ function displayCat() {
 // Function to display the cat-heart.gif
 function displayCatHeart() {
     // Clear existing content in the image container
-    document.getElementById('image-container').innerHTML = '';
-    // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = '';
+
     // Create a new Image element for the cat-heart
     var catHeartImage = new Image();
-    // Set the source (file path) for the cat-heart image
-    catHeartImage.src = 'cat-heart.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
-    // Set alternative text for the image (for accessibility)
+    catHeartImage.src = 'cat-heart.gif'; 
     catHeartImage.alt = 'Cat Heart';
-    // When the cat-heart image is fully loaded, add it to the image container
+
+    // Create the message element
+    var message = document.createElement('p');
+    message.id = 'success-message';
+    message.innerText = "YAAYYYY I knew you would say yes, You didn't get the big yes button by pressing no right? ... ";
+    // Style the message slightly (optional)
+    message.style.fontSize = '24px';
+    message.style.fontWeight = 'bold';
+
+    // When the cat-heart image is fully loaded, add everything to the container
     catHeartImage.onload = function() {
         imageContainer.appendChild(catHeartImage);
+        imageContainer.appendChild(message); // Add your text under the GIF
         // Hide the options container
         document.getElementById('options').style.display = 'none';
     };
