@@ -58,30 +58,23 @@ function displayCat() {
 
 // Function to display the cat-heart.gif
 function displayCatHeart() {
-    // 1. Change the image to the cat with hearts
+    // Clear existing content in the image container
+    document.getElementById('image-container').innerHTML = '';
+    // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
-    imageContainer.innerHTML = ''; 
+    // Create a new Image element for the cat-heart
     var catHeartImage = new Image();
-    catHeartImage.src = 'cat-heart.gif';
+    // Set the source (file path) for the cat-heart image
+    catHeartImage.src = 'cat-heart.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
+    // Set alternative text for the image (for accessibility)
     catHeartImage.alt = 'Cat Heart';
-    imageContainer.appendChild(catHeartImage);
-
-    // 2. Hide the original question
-    document.getElementById('question').style.display = 'none';
-
-    // 3. Create and show the new "YAAYYYY" text
-    var textContainer = document.getElementById('text-container');
-    var yayText = document.createElement('div');
-    yayText.id = 'yay-message';
-    yayText.innerText = "YAAYYYY I knew you would say yes, You didn't get the big yes button by pressing no right? ... ";
-    
-    // Add the new text to the container
-    textContainer.appendChild(yayText);
-
-    // 4. Hide the buttons
-    document.getElementById('options').style.display = 'none';
+    // When the cat-heart image is fully loaded, add it to the image container
+    catHeartImage.onload = function() {
+        imageContainer.appendChild(catHeartImage);
+        // Hide the options container
+        document.getElementById('options').style.display = 'none';
     };
 }
 
 // Display the cat.gif initially
-displayCat();
+displayCat()
