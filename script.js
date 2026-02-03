@@ -7,6 +7,21 @@ function selectOption(option) {
         // Flash rainbow colors
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
+            const message = document.createElement('div');
+    message.id = 'yesMessage';
+    message.innerHTML = `
+      <h2>YAAYYYY 🎉💖</h2>
+      <p>
+        I knew you would say yes 😌<br><br>
+        You didn’t get the big YES button by pressing no, right? 😏
+      </p>
+    `;
+
+    message.style.textAlign = 'center';
+    message.style.fontSize = '18px';
+    message.style.marginTop = '20px';
+
+    document.body.appendChild(message);
             displayCatHeart(); // Display the cat-heart.gif
         });
     } else if (option === 'no') {
