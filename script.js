@@ -58,29 +58,35 @@ function displayCat() {
 
 // Function to display the cat-heart.gif
 function displayCatHeart() {
-    // Clear existing content in the image container
+    // 1. Clear the container
     var imageContainer = document.getElementById('image-container');
     imageContainer.innerHTML = '';
 
-    // Create a new Image element for the cat-heart
+    // 2. Create the GIF
     var catHeartImage = new Image();
     catHeartImage.src = 'cat-heart.gif'; 
     catHeartImage.alt = 'Cat Heart';
+    catHeartImage.style.display = 'block';
+    catHeartImage.style.margin = '0 auto';
 
-    // Create the message element
-    var message = document.createElement('p');
+    // 3. Create the Text
+    var message = document.createElement('div');
     message.id = 'success-message';
-    message.innerText = "YAAYYYY I knew you would say yes, You didn't get the big yes button by pressing no right? ... ";
-    // Style the message slightly (optional)
-    message.style.fontSize = '24px';
-    message.style.fontWeight = 'bold';
+    message.innerHTML = "YAAYYYY I knew you would say yes, <br> You didn't get the big yes button by pressing no right? ... ";
+    
+    // Optional: Inline styling to make sure it's visible
+    message.style.fontSize = '2rem';
+    message.style.marginTop = '20px';
+    message.style.textAlign = 'center';
+    message.style.color = '#ff4d6d';
 
-    // When the cat-heart image is fully loaded, add everything to the container
-    catHeartImage.onload = function() {
-        imageContainer.appendChild(catHeartImage);
-        imageContainer.appendChild(message); // Add your text under the GIF
-        // Hide the options container
-        document.getElementById('options').style.display = 'none';
+    // 4. Add them to the page
+    imageContainer.appendChild(catHeartImage);
+    imageContainer.appendChild(message);
+
+    // 5. Hide the question and options
+    document.getElementById('question').style.display = 'none';
+    document.getElementById('options').style.display = 'none';
     };
 }
 
