@@ -4,26 +4,24 @@
 function selectOption(option) {
     // Check which option was clicked
     if (option === 'yes') {
-        // Flash rainbow colors
-         {
+        // Flash rainbow colors then show the message and cat-heart
+        flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
-           const message = document.createElement('div');
-message.id = 'yesMessage';
-message.innerHTML = `
+            const message = document.createElement('div');
+            message.id = 'yesMessage';
+            message.innerHTML = `
   <h2>YAAYYYY 🎉💖</h2>
   <p>
     I knew you would say yes 😌<br><br>
     You didn’t get the big YES button by pressing no, right? 😏
   </p>
 `;
+            message.style.textAlign = 'center';
+            message.style.fontSize = '18px';
+            message.style.marginTop = '20px';
 
-message.style.textAlign = 'center';
-message.style.fontSize = '18px';
-message.style.marginTop = '20px';
-
-document.body.appendChild(message);
+            document.body.appendChild(message);
             displayCatHeart(); // Display the cat-heart.gif
-           
         });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
@@ -31,7 +29,7 @@ document.body.appendChild(message);
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
+        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by * 2
         yesButton.style.fontSize = newSize + 'px';
     } else {
         // If neither "Yes" nor "No" was clicked, show an alert message
