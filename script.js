@@ -2,9 +2,12 @@
 
 // Function to handle button click events
 function selectOption(option) {
-document.getElementById('question').style.display = 'none';
-
-const message = document.createElement('div');
+    // Check which option was clicked
+    if (option === 'yes') {
+        // Flash rainbow colors
+         {
+            document.getElementById('question').style.display = 'none'; // Hide the question
+           const message = document.createElement('div');
 message.id = 'yesMessage';
 message.innerHTML = `
   <h2>YAAYYYY 🎉💖</h2>
@@ -19,9 +22,9 @@ message.style.fontSize = '18px';
 message.style.marginTop = '20px';
 
 document.body.appendChild(message);
-
-// optional: still show the cat heart
-displayCatHeart();
+            displayCatHeart(); // Display the cat-heart.gif
+           
+        });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?'; 
