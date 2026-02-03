@@ -73,6 +73,21 @@ function displayCatHeart() {
         imageContainer.appendChild(catHeartImage);
         // Hide the options container
         document.getElementById('options').style.display = 'none';
+
+        // --- NEW CODE STARTS HERE ---
+        // Create the text message element
+        var message = document.createElement('div');
+        message.innerText = "YYAAYYYY I knew you would say yes, You didn't get the big yes button by pressing no right? ...";
+        
+        // Add some basic styling to make the text look nice
+        message.style.fontSize = "24px";
+        message.style.fontWeight = "bold";
+        message.style.marginTop = "20px";
+        message.style.color = "black";
+        message.style.fontFamily = "Arial, sans-serif";
+
+        // Append the message to the image container so it appears below the image
+        imageContainer.appendChild(message);
     };
 }
 
